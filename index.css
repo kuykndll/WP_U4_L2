@@ -36,6 +36,14 @@ p{
     width: fit-content;
 }
 
+#sdp_body{
+    font-family: "Inter";
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
 #content{
     gap: 12px;
 }
@@ -91,6 +99,21 @@ p{
 
 #keyboard>div{
     gap: 4px;
+}
+
+a{
+    font-family: "Inter";
+    font-weight: bolder;
+    color: #36d7ff;
+    transition: all 0.1s ease-in;
+}
+
+a:hover{
+    color: #80e5ff;
+}
+
+a:active{
+    color: #919191;
 }
 
 .key{

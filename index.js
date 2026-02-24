@@ -7,7 +7,7 @@ const body = document.getElementsByTagName("body")[0];
 const alpha = "qwertyuiop*asdfghjkl*zxcvbnm";
 const preview = document.getElementById("preview");
 const console = document.getElementById("console");
-console.log(alpha[29]);
+
 function genKeyboard(){
     let index = 0;
     for(let r=0;r<3;r++){
@@ -27,15 +27,6 @@ function genKeyboard(){
         }
         index++;
     }
-    const row = document.createElement("div");
-    row.className = "row";
-    const spacebar = document.createElement("div");
-    spacebar.className = "space";
-    spacebar.id = " ";
-    spacebar.onclick = function(){keyPress(spacebar.id)}
-    spacebar.textContent = "Space";
-    row.appendChild(spacebar);
-    body.appendChild(row);
 }
 
 function keyPress(chr){

@@ -3,11 +3,14 @@
 // Maeson, Abel
 // Started @ 2/24/2026
 const alpha = "qwertyuiop*asdfghjkl*zxcvbnm";
+const selectedWord = selectWord()
+
 function selectWord(){
     const words = ["air","sock","breakdown","panic","thick","lighter","cope","roof","know","freighter","ivory","miserable","adjust","exploration","meat","inflate","professor","colorful","financial","vote","form","coalition"];
-    const selectedWord = words[Math.floor(Math.random()*words.length)]
-    console.log(selectedWord);
+    const selectedWord = words[Math.floor(Math.random()*words.length)];
+    return selectedWord;
 }
+
 function genKeyboard(){
     let index = 0;
     const body = document.getElementById("keyboard");

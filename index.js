@@ -2,14 +2,15 @@
 // Hangman | HTML, CSS, JS
 // Maeson, Abel
 // Started @ 2/24/2026
-
-const body = document.getElementsByTagName("body")[0];
 const alpha = "qwertyuiop*asdfghjkl*zxcvbnm";
-const preview = document.getElementById("preview");
-const console = document.getElementById("console");
-
+function selectWord(){
+    const words = ["air","sock","breakdown","panic","thick","lighter","cope","roof","know","freighter","ivory","miserable","adjust","exploration","meat","inflate","professor","colorful","financial","vote","form","coalition"];
+    const selectedWord = words[Math.floor(Math.random()*words.length)]
+    console.log(selectedWord);
+}
 function genKeyboard(){
     let index = 0;
+    const body = document.getElementById("keyboard");
     for(let r=0;r<3;r++){
         const row = document.createElement("div");
         row.className = "row";
@@ -33,7 +34,4 @@ function keyPress(chr){
     preview.textContent+=chr;
 }
 
-function submit(){
-    console.textContent += preview.textContent;
-    preview.textContent = "";
-}
+genKeyboard();

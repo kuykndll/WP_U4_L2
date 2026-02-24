@@ -7,6 +7,19 @@
 
 body{
     display: flex;
+    font-family: "Inter";
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+h1{
+    margin: 0;
+}
+
+p{
+    margin: 0;
 }
 
 .letter{
@@ -23,10 +36,44 @@ body{
     flex-direction: row;
 }
 
+#content{
+    gap: 12px;
+}
+
+#title{
+    gap: 4px;
+}
+
 #notification{
 
 }
 
 #stickman{
+    display: flex;
+    width: 500px;
+    height: 500px;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 12px;
+    align-content: center;
+    justify-content: flex-start;
+}
 
+#wordbox{
+    display: flex;
+    width: 500px;
+    height: fit-content;
+    font-family: "Inter";
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+#wordbox>p{
+    font-size: 9px;
+}
+
+#wordbox>h1{
+    font-size: 32px;
 }

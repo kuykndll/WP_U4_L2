@@ -12,6 +12,8 @@ body{
     align-items: center;
     text-align: center;
     height: 100vh;
+    overflow: scroll;
+    padding: 24px;
 }
 
 h1{
@@ -45,7 +47,8 @@ p{
 }
 
 #notification{
-
+    opacity: 0;
+    transition: 0.25s ease-in all;
 }
 
 #stickman{
@@ -76,4 +79,13 @@ p{
 
 #wordbox>h1{
     font-size: 32px;
+}
+
+#keyboard{
+    display: flex;
+    width: 500px;
+    height: 96px;
+    padding: 12px;
+    gap: 4px;
+    border: 1px solid black;
 }

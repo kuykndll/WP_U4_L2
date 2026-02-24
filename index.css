@@ -24,10 +24,6 @@ p{
     margin: 0;
 }
 
-.letter{
-
-}
-
 .column{
     display: flex;
     flex-direction: column;

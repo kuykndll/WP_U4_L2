@@ -36,7 +36,7 @@ function checkChar(chr){
         stage++;
         stickImage.src = `resources/stickman_stages/Stage${stage}.png`;
         if(stage == 7){
-            notif.textContent = "YOU LOSE!";
+            notif.textContent = `YOU LOSE! THE WORD WAS ${selectedWord.toUpperCase()}.`;
             notif.style.color = "red"
             notif.style.opacity = "100";
             playing = false;
@@ -87,5 +87,4 @@ function keyPress(chr,key){
         key.onclick = ""
     }
 }
-
 genKeyboard();

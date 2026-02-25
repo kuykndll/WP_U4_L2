@@ -72,7 +72,7 @@ function genKeyboard(){
             const key = document.createElement("div");
             key.className="key";
             key.id=chr;
-            key.onclick = function(){keyPress(key.id)}
+            key.onclick = function(){keyPress(key.id,key)}
             key.textContent= chr.toUpperCase();
             row.appendChild(key);
             index++;
@@ -81,9 +81,11 @@ function genKeyboard(){
     }
 }
 
-function keyPress(chr){
-    if(playing){
+function keyPress(chr,key){
+    if(playing ){
         checkChar(chr);
+        key.className="inactive_key"
+        key.onclick = ""
     }
 }
 

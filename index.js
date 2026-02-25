@@ -47,7 +47,6 @@ function checkChar(chr){
 function selectWord(){
     const words = ["air","sock","breakdown","panic","thick","lighter","cope","roof","know","freighter","ivory","miserable","adjust","exploration","meat","inflate","professor","colorful","financial","vote","form","coalition"];
     const selectedWord = words[Math.floor(Math.random()*words.length)];
-    console.log(selectedWord);
     return selectedWord;
 }
 function hideWord(word){

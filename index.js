@@ -4,20 +4,56 @@
 // Started @ 2/24/2026
 const alpha = "qwertyuiop*asdfghjkl*zxcvbnm";
 const selectedWord = selectWord();
-const hiddenWord = hideWord(selectedWord);
+const stickImage = document.getElementById("stickman_img");
+const wordbox = document.getElementById("wordbox");
+const wordDisplay = wordbox.getElementsByTagName("h1")[0];
+const notif = document.getElementById("notification");
+let hiddenWord = hideWord(selectedWord);
 let stage = 1;
+
+
+function updateWord(chr){
+    for(let i=0;i<hiddenWord.length;i++){
+        if(chr == selectedWord[i]){
+            hiddenWord[i] = chr;
+
+    }
+    wordDisplay.textContent = hiddenWord.join("");
+}
+}
+
+function checkChar(chr){
+    if (selectedWord.includes(chr)){
+        updateWord(chr);
+        if(!(hiddenWord.includes('_'))){
+            notif.textContent="YOU WIN!";
+            notif.style.color = "green";
+            notif.style.opacity = "100"
+        }
+    }
+    else{
+        stage++;
+        stickImage.src = `resources/stickman_stages/Stage${stage}.png`;
+        if(stage == 7){
+            notif.textContent = "YOU LOSE!";
+            notif.style.color = "red"
+            notif.style.opacity = "100";
+        }
+    }
+}
 
 function selectWord(){
     const words = ["air","sock","breakdown","panic","thick","lighter","cope","roof","know","freighter","ivory","miserable","adjust","exploration","meat","inflate","professor","colorful","financial","vote","form","coalition"];
     const selectedWord = words[Math.floor(Math.random()*words.length)];
+    console.log(selectedWord);
     return selectedWord;
 }
 function hideWord(word){
-    const wordbox = document.getElementById("wordbox");
-    const wordDisplay = wordbox.getElementsByTagName("h1")[0];
-    const hiddenWord = '_ '.repeat(word.length);
-    console.log(wordDisplay);
-    wordDisplay.textContent = hiddenWord;
+    const hiddenWord = []
+    for(i=0;i<word.length;i++){
+        hiddenWord.push('_');
+    }
+    wordDisplay.textContent = hiddenWord.join("");
     return hiddenWord;
 }
 
@@ -29,7 +65,7 @@ function genKeyboard(){
         row.className = "row";
         body.appendChild(row);
 
-        while(alpha[index]!=='*'){
+        while(alpha[index]!=='*' && index != alpha.length){
             chr = alpha[index];
             const key = document.createElement("div");
             key.className="key";
@@ -44,7 +80,7 @@ function genKeyboard(){
 }
 
 function keyPress(chr){
-    preview.textContent+=chr;
+    checkChar(chr);
 }
 
 genKeyboard();

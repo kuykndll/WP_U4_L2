@@ -10,7 +10,7 @@ const wordDisplay = wordbox.getElementsByTagName("h1")[0];
 const notif = document.getElementById("notification");
 let hiddenWord = hideWord(selectedWord);
 let stage = 1;
-
+let playing = true
 
 function updateWord(chr){
     for(let i=0;i<hiddenWord.length;i++){
@@ -29,6 +29,7 @@ function checkChar(chr){
             notif.textContent="YOU WIN!";
             notif.style.color = "green";
             notif.style.opacity = "100"
+            playing=false;
         }
     }
     else{
@@ -38,6 +39,7 @@ function checkChar(chr){
             notif.textContent = "YOU LOSE!";
             notif.style.color = "red"
             notif.style.opacity = "100";
+            playing = false;
         }
     }
 }
@@ -80,7 +82,9 @@ function genKeyboard(){
 }
 
 function keyPress(chr){
-    checkChar(chr);
+    if(playing){
+        checkChar(chr);
+    }
 }
 
 genKeyboard();
